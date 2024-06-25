@@ -1,0 +1,9 @@
+FIXTURES:
+-find better algo for city and country
+-setting the possible service for each material
+
+EVENT LISTENER
+-event listenter to hash the password
+
+DB:
+- Give to employee data from the contract?

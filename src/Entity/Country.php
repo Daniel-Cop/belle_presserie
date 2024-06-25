@@ -15,7 +15,7 @@ class Country
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 80)]
+    #[ORM\Column(length: 80, unique: true)]
     private ?string $name = null;
 
     /**
