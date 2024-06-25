@@ -1,0 +1,52 @@
+DATA FIXTURE FOR CATEGORIES
+    private const CATEGORIES = [
+        "Languages" => [
+            "PHP" => [
+                "Superglobals" => [
+                    '$_GET',
+                    '$_POST',
+                    '$_FILES',
+                ],
+                "File upload",
+                "Arrays"
+            ],
+            "Rust" => [
+                "Compilation",
+                "Ownership",
+                "Cargo",
+                "Modules"
+            ],
+            "JS" => [
+                "Closures",
+                "Arrow functions",
+                "ES6"
+            ]
+        ],
+        "Frameworks" => [
+            "NextJS",
+            "Symfony",
+            "Laravel"
+        ]
+    ];
+    // in load()
+    // ...
+    $this->loadCategories($manager, null, self::CATEGORIES);
+    // ...
+ private function loadCategories(ObjectManager $manager, ?Category $parentCategory, array $categories)
+    {
+        foreach ($categories as $key => $val) {
+            $recursive = is_array($val);
+            $categoryName = $recursive ? $key : $val;
+
+            $category = new Category();
+            $category
+                ->setName($categoryName)
+                ->setParent($parentCategory);
+            $manager->persist($category);
+            $this->categories[] = $category;
+
+            if ($recursive) {
+                $this->loadCategories($manager, $category, $val);
+            }
+        }
+    }
