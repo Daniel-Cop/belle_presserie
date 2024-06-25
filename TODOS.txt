@@ -7,3 +7,10 @@ EVENT LISTENER
 
 DB:
 - Give to employee data from the contract?
+
+SECURITY:
+- Token JWT for connection ('api/auth')
+
+CRUD:
+- API CRUD for every entity, then each role has permission for certain
+- #[Groups()] to show (or not) different info (Lucas courses)
