@@ -12,6 +12,7 @@ SECURITY:
 - Token JWT for connection ('api/auth')
 
 CRUD:
-- API CRUD for every entity, then each role has permission for certain
+- Does 'User' need CRUD?
+- Roles permissions for certain for CRUD
 (#[ApiResource] https://ld-web.github.io/hb-sf-pe9-course/api/api-platform-installation?_highlight=cors/hb-sf-pe9-course/api/api-platform-installation#cors--authentification)
 - #[Groups()] to show (or not) different info (Lucas courses)

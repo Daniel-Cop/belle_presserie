@@ -27,6 +27,11 @@ class Item
     #[ORM\Column]
     private ?float $coefficient = null;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

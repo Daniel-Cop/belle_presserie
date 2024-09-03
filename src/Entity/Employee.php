@@ -24,6 +24,11 @@ class Employee extends User
         $this->articles = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->employeeNumber;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -16,6 +16,11 @@ class PaymentMethod
     #[ORM\Column(length: 30, unique: true)]
     private ?string $name = null;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
