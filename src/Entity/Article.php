@@ -2,40 +2,51 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
+#[ApiResource(normalizationContext: ['groups' => ['articles:list']])]
 class Article
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['articles:list'])]
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Groups(['articles:list'])]
     private ?float $price = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['articles:list'])]
     private ?Service $service = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['articles:list'])]
     private ?Item $item = null;
 
     #[ORM\ManyToOne]
+    #[Groups(['articles:list'])]
     private ?ArticleStatus $status = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['articles:list'])]
     private ?Material $material = null;
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['articles:list'])]
     private ?Order $clientOrder = null;
 
     #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[Groups(['articles:list'])]
     private ?Employee $employee = null;
 
     public function getId(): ?int

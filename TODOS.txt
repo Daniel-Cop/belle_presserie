@@ -14,5 +14,6 @@ SECURITY:
 CRUD:
 - Does 'User' need CRUD?
 - Roles permissions for certain for CRUD
+- API Platform CRUD
 (#[ApiResource] https://ld-web.github.io/hb-sf-pe9-course/api/api-platform-installation?_highlight=cors/hb-sf-pe9-course/api/api-platform-installation#cors--authentification)
 - #[Groups()] to show (or not) different info (Lucas courses)
